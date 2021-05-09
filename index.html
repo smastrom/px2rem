@@ -77,22 +77,22 @@
 
             infoBaseBtn.addEventListener("click", (e) => {
                 if (infoBaseTooltip.classList.contains("skewOutAnim")) {
-                    setTimeout(() => { infoBaseTooltip.classList.remove("skewOutAnim") }, 50); // Remove animation out class if already trigged the closure, ignored in the first execution
+                    setTimeout(() => { infoBaseTooltip.classList.remove("skewOutAnim") }, 50); // Remove animation-out class if already trigged the closure, ignored in the first execution
                 }
 
                 setTimeout(() => {
-                    infoBaseTooltip.classList.add("showInfoBaseTooltip") // Show tooltip and add animation in class
-                    infoBaseTooltip.classList.add("skewInAnim")
+                    infoBaseTooltip.classList.add("showInfoBaseTooltip") // Sets tooltip on display: flex
+                    infoBaseTooltip.classList.add("skewInAnim") // Runs the animation
                 }, 50);
 
-                closeTooltip(); // Run function with the listener that closes the tooltip
+                closeTooltip(); // Runs the function with the listener that closes the tooltip
             })
 
             function closeTooltip() {
                 document.addEventListener("click", (e) => {
 
                     if (infoBaseTooltip.classList.contains("skewInAnim") && infoBaseTooltip.classList.contains("showInfoBaseTooltip") && !e.target.classList.contains("infoBaseTooltip")) {
-                        infoBaseTooltip.classList.remove("skewInAnim") // Remove animation in class triggered with the opening
+                        infoBaseTooltip.classList.remove("skewInAnim") // Removes animation-in class triggered with the opening
                         setTimeout(() => { infoBaseTooltip.classList.add("skewOutAnim") }, 50); // Runs the animation closing class
                         setTimeout(() => { infoBaseTooltip.classList.remove("showInfoBaseTooltip") }, 550); // Sets on display:none the element after the animation is finish
                     }

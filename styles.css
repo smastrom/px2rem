@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "Inter";
+    src: url("/woff2/Inter-Regular.woff2");
+    weight: 400;
+    display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("/woff2/Inter-SemiBold.woff2");
+    weight: 600;
+    display: swap;
+}
+
+
 :root {
     --blue: #005EEF;
     --lightBlue: #D0E2FF;
@@ -19,7 +34,8 @@ html {
 }
 
 body {
-    font-family: Inter;
+    font-family: var(--interStack);
+    font-weight: 400;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     color: var(--baseText);
@@ -76,6 +92,8 @@ h1 {
 
 .logo {
     color: var(--blue);
+    font-family: var(--interStack);
+    font-weight: 600;
 }
 
 .baseContainer {
