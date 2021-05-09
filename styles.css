@@ -100,7 +100,7 @@ h1 {
 }
 
 .inputField {
-    padding: .8em 1em;
+    padding: .8em 3.6rem .8em .8em;
     font-size: 1.25rem;
     -moz-appearance: textfield;
     border: 2px solid var(--divider);
@@ -202,4 +202,36 @@ h1 {
 
 .showInfoBaseTooltip {
     display: flex;
+}
+
+.skewInAnim {
+    animation: skewIn .5s ease;
+}
+
+.skewOutAnim {
+    animation: skewOut .5s ease;
+}
+
+@keyframes skewIn {
+    0% {
+        transform: skewY(-5deg) rotate(5deg) translateY(-30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: skewY(0) rotate(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes skewOut {
+    0% {
+        transform: skewY(0) rotate(0) translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: skewY(-5deg) rotate(5deg) translateY(-30px);
+        opacity: 0;
+    }
 }
