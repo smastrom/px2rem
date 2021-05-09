@@ -12,7 +12,6 @@
     display: swap;
 }
 
-
 :root {
     --blue: #005EEF;
     --lightBlue: #D0E2FF;
@@ -27,6 +26,8 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -118,7 +119,7 @@ h1 {
 }
 
 .inputField {
-    padding: .8em 3.6rem .8em .8em;
+    padding: .8em 3.2rem .8em .8em;
     font-size: 1.25rem;
     -moz-appearance: textfield;
     border: 2px solid var(--divider);
@@ -126,13 +127,15 @@ h1 {
     max-width: 260px;
     position: relative;
     background: transparent;
-    transition: border .15s ease, outline .15s ease;
+    transition: border .15s ease, box-shadow .15s ease;
+    -webkit-transition: border .15s ease, box-shadow .15s ease;;
     color: var(--blackText);
+    outline: none;
 }
 
 .inputField:focus {
     border: 2px solid var(--blue);
-    outline: 6px solid var(--lightBlue);
+    box-shadow: 0 0 0 6px var(--lightBlue);
 }
 
 .inputField::-webkit-outer-spin-button,
