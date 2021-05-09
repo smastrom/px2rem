@@ -1,14 +1,14 @@
 @font-face {
     font-family: "Inter";
     src: url("/woff2/Inter-Regular.woff2");
-    weight: 400;
+    font-weight: 400;
     display: swap;
 }
 
 @font-face {
     font-family: "Inter";
     src: url("/woff2/Inter-SemiBold.woff2");
-    weight: 600;
+    font-weight: 600;
     display: swap;
 }
 
