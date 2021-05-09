@@ -206,10 +206,12 @@ h1 {
 
 .skewInAnim {
     animation: skewIn .5s ease;
+    -webkit-animation: skewIn .5s ease;
 }
 
 .skewOutAnim {
     animation: skewOut .5s ease;
+    -webkit-animation: skewOut .5s ease;
 }
 
 @keyframes skewIn {
@@ -225,6 +227,30 @@ h1 {
 }
 
 @keyframes skewOut {
+    0% {
+        transform: skewY(0) rotate(0) translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: skewY(-5deg) rotate(5deg) translateY(-30px);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes skewIn {
+    0% {
+        transform: skewY(-5deg) rotate(5deg) translateY(-30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: skewY(0) rotate(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes skewOut {
     0% {
         transform: skewY(0) rotate(0) translateY(0);
         opacity: 1;
