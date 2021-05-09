@@ -1,0 +1,266 @@
+<html lang="en_US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="mainWrapper">
+        <div class="mainContainer">
+
+            <div class="logoContainer">
+                <h1 class="logo">Px2Rem</h1>
+                <p class="subHeading">Just enter the input value, the conversion
+                    will be performed live in both directions.</p>
+            </div>
+
+
+
+            <div class="pxRemContainer">
+                <div class="inputFieldPx"><input class="inputField" type="number" id="pixels" decimals="3"
+                        value="16"></input>
+                </div>
+                <div class="inputFieldRem"><input class="inputField" type="number" id="rems" decimals="3"
+                        value="1"></input>
+                </div>
+            </div>
+
+            <div class="baseContainer">
+                <button class="changeBase infoBaseBtn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                        viewBox="0 0 20 20">
+                        <g transform="translate(-2 -2)">
+                            <path d="M11,10.979a1,1,0,1,1,2,0v6a1,1,0,0,1-2,0Z" fill="#8f94a0" />
+                            <path d="M12,6.051a1,1,0,1,0,1,1A1,1,0,0,0,12,6.051Z" fill="#8f94a0" />
+                            <path d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2ZM4,12a8,8,0,1,0,8-8A8,8,0,0,0,4,12Z"
+                                fill="#8f94a0" fill-rule="evenodd" />
+                        </g>
+                    </svg>
+                </button><label for="base-text">Base</label>
+                <div class="infoBaseTooltip">By default, if not set, the browser’s default HTML font-size equals to
+                    16px, however if you are using a framework such as Material UI or a Wordpress Theme it might be
+                    different. If you are unsure just inspect the HTML tag of your website and check for the font-size
+                    property. The px value assigned is your base. If the HTML tag doesn’t include this property check
+                    for the body tag.</div>
+                <div class="inputFieldBase"><input class="inputField inputFieldBaseInner" name="base-text"
+                        class="changeBase" type="number" id="base" value="16" min="1" max="32" decimals="3"
+                        disabled=""></input></div>
+                <button class="changeBase" id="change_base">Edit</button>
+            </div>
+
+            <nav class="bottomLinks">
+                <ul>
+                    <li>Fork & Edit</li>
+                    <li>Lean more</li>
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+
+            // Variables declaration
+
+            let baseTextField = document.querySelector("#base");
+            let pixelsField = document.querySelector("#pixels");
+            let remsField = document.querySelector("#rems");
+            let changeBaseBtn = document.querySelector("#change_base");
+            let infoBaseBtn = document.querySelector(".infoBaseBtn");
+            let infoBaseTooltip = document.querySelector(".infoBaseTooltip")
+
+            // Open and close tooltip
+
+            infoBaseBtn.addEventListener("click", (e) => {
+                setTimeout(() => { infoBaseTooltip.classList.toggle("showInfoBaseTooltip") }, 50);
+                closeTooltip();
+            })
+
+            function closeTooltip() { document.addEventListener("click", (e) => {
+                if (infoBaseTooltip.classList.contains("showInfoBaseTooltip") && (!e.target.classList.contains("infoBaseBtn") || !e.target.classList.contains("infoBaseTooltip")))
+                setTimeout(() =>  { infoBaseTooltip.classList.remove("showInfoBaseTooltip") }, 50);
+            }) };
+
+            // Px base text field behavior
+
+            changeBaseBtn.addEventListener("click", function (event) {
+
+                baseTextField.disabled = false;
+                baseTextField.focus();
+
+            })
+
+            // Document behavior
+
+            document.addEventListener("click", function (event) {
+
+                if (!event.target.classList.contains("changeBase")) {
+                    baseTextField.disabled = true;
+                    baseTextField.blur();
+                }
+            })
+
+            // Reset text color on px and rem input fields when clicking outside the fields
+
+            document.addEventListener("click", function (event) {
+
+                if (!event.target.classList.contains("inputField")) {
+                    pixelsField.style.color = "var(--blackText)"
+                    remsField.style.color = "var(--blackText)"
+                }
+            })
+
+            // Reset and invert properly text color on px and rem input fields when clicking
+
+            pixelsField.addEventListener("click", function (event) {
+                this.style.color = "var(--blackText)"
+            })
+
+            remsField.addEventListener("click", function (event) {
+                this.style.color = "var(--blackText)"
+            })
+
+
+
+            remsField.addEventListener("keydown", function (event) {
+
+                // Prevent invalid characters press
+
+                if (event.key == " " || event.code >= "KeyA" && event.code <= "KeyZ") {
+                    event.preventDefault();
+                }
+
+                // Document behavior
+
+                setTimeout(function () {
+
+                    // Initalize as number the input value
+
+                    let baseClean = baseTextField.valueAsNumber
+                    parseFloat(baseClean)
+                    // console.log(baseClean)
+
+                    let pixelsClean = pixelsField.valueAsNumber
+                    parseFloat(pixelsClean)
+                    // console.log(pixelsClean)
+
+                    let remsClean = remsField.valueAsNumber
+
+                    // console.log(remsClean)
+
+                    // Calculate px based on rem input
+
+                    pixelsResult = baseClean * remsClean
+
+                    // Adjust decimals
+
+                    let verifyPixels = Number.isInteger(pixelsResult)
+
+                    if (!verifyPixels) {
+                        pixelsResult = pixelsResult.toFixed(1)
+                    }
+
+                    // console.log(pixelsResult)
+
+                    // Text color behavior
+
+                    pixelsField.style.color = "var(--blue)"
+                    remsField.style.color = "var(--blackText)"
+
+                    // Display results
+
+                    pixelsField.value = pixelsResult
+
+                }, 50);
+
+            })
+
+
+            pixelsField.addEventListener("keydown", function (event) {
+
+                // Prevent invalid characters press
+
+                if (event.key == " " || event.code >= "KeyA" && event.code <= "KeyZ") {
+                    event.preventDefault();
+                }
+
+                setTimeout(function () {
+
+                    pixelsField.style.color = "black"
+
+                    // Initalize as number the input value
+
+                    let baseClean = baseTextField.valueAsNumber
+                    parseFloat(baseClean)
+                    // console.log(baseClean)
+
+                    let pixelsClean = pixelsField.valueAsNumber
+                    parseFloat(pixelsClean)
+                    // console.log(pixelsClean)
+
+                    // Calculate rems based on px input
+
+                    remsResult = pixelsClean / baseClean
+
+                    // Adjust decimals
+
+                    let verifyRems = Number.isInteger(remsResult)
+
+                    if (!verifyRems) {
+                        remsResult = remsResult.toFixed(3)
+                    }
+
+                    // console.log(remsResult)
+
+                    // Text color behavior
+
+                    remsField.style.color = "var(--blue)"
+                    pixelsField.style.color = "var(--blackText)"
+
+                    // Display results
+
+                    remsField.value = remsResult
+
+                }, 50);
+
+            })
+
+
+            baseTextField.addEventListener("keydown", function (event) {
+
+                // Prevent invalid characters press
+
+                if (event.key == " " || event.code >= "KeyA" && event.code <= "KeyZ") {
+                    event.preventDefault();
+                }
+
+                setTimeout(function () {
+
+                    let baseClean = baseTextField.valueAsNumber
+                    parseFloat(baseClean)
+                    // console.log(baseClean)
+
+                    // Reset results
+
+                    pixelsResult = baseClean
+
+                    remsResult = 1
+
+                    pixelsField.value = pixelsResult
+
+                    remsField.value = remsResult
+
+                }, 50);
+
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>

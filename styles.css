@@ -1,0 +1,205 @@
+:root {
+    --blue: #005EEF;
+    --lightBlue: #D0E2FF;
+    --baseText: #8F94A0;
+    --blackText: #3D3D3D;
+    --divider: #ECECEC;
+    --globalContainer: 1100px;
+    --globalLrPadding: 30px;
+    --globalTbPadding: 40px;
+    --interStack: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica", "Helvetica Neue", "Arial", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: Inter;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    color: var(--baseText);
+    position: relative;
+    height: 100%;
+    min-height: 660px;
+}
+
+h1, h2, h3 {
+    margin: 0 0 .4em 0;
+}
+
+p {
+    margin: 0 0 1.2em 0;
+}
+
+
+h1 {
+    font-size: 3.5rem;
+}
+
+.mainWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainContainer {
+    width: var(--globalContainer);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: var(--globalTbPadding) var(--globalLrPadding);
+}
+
+.logoContainer {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 992px) {
+    .logoContainer {
+        width: 100%;
+    }
+}
+
+
+.subHeading {
+    text-align: center;
+}
+
+.logo {
+    color: var(--blue);
+}
+
+.baseContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.pxRemContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    margin: 6.25rem 0;
+}
+
+@media screen and (max-width: 992px) {
+    .pxRemContainer {
+        margin: 4rem 0;
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+    }
+}
+
+.inputField {
+    padding: .8em 1em;
+    font-size: 1.25rem;
+    -moz-appearance: textfield;
+    border: 2px solid var(--divider);
+    border-radius: 10px;
+    max-width: 260px;
+    position: relative;
+    background: transparent;
+    transition: border .15s ease, outline .15s ease;
+    color: var(--blackText);
+}
+
+.inputField:focus {
+    border: 2px solid var(--blue);
+    outline: 6px solid var(--lightBlue);
+}
+
+.inputField::-webkit-outer-spin-button,
+.inputField::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.changeBase {
+    font-size: .875rem;
+    appearance: none;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+.infoBaseBtn {
+    margin-right: .325rem;
+}
+
+.inputFieldBase {
+    margin: 0 1rem;
+}
+
+.inputFieldBase > input {
+    width: 100px;
+}
+
+.inputFieldRem, .inputFieldPx, .inputFieldBase {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.inputFieldPx::after, .inputFieldBase::after {
+    content: "Px";
+    display: block;
+    z-index: 1;
+    right: 1rem;
+    position: absolute;
+}
+
+.inputFieldRem::after {
+    content: "Rem";
+    display: block;
+    z-index: 1;
+    right: 1rem;
+    position: absolute;
+}
+
+.inputFieldBaseInner:disabled {
+    color: var(--baseText);
+}
+
+.bottomLinks {
+    display: grid;
+    align-content: center;
+    position: absolute;
+    bottom: 40px;
+}
+
+.bottomLinks ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3.125rem;
+    margin: 0;
+    padding: 0;
+}
+
+.infoBaseTooltip {
+    display: none;
+    position: absolute;
+    font-size: .825rem;
+    background: var(--baseText);
+    color: white;
+    padding: 1em;
+    border-radius: 10px;
+    top: 70px;
+    left: -70px;
+    line-height: 1.4;
+}
+
+.showInfoBaseTooltip {
+    display: flex;
+}
