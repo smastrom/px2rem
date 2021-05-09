@@ -53,6 +53,11 @@ p {
     margin: 0 0 1.2em 0;
 }
 
+a {
+    color: var(--baseText);
+    text-decoration: none;
+}
+
 
 h1 {
     font-size: 3.5rem;
@@ -121,8 +126,8 @@ h1 {
 .inputField {
     padding: .8em 3.2rem .8em .8em;
     font-size: 1.25rem;
-    -moz-appearance: textfield;
     -webkit-appearance: none;
+    -moz-appearance: textfield;
     border: 2px solid var(--divider);
     border-radius: 10px;
     max-width: 260px;
@@ -131,6 +136,7 @@ h1 {
     transition: border .15s ease, box-shadow .15s ease;
     -webkit-transition: border .15s ease, box-shadow .15s ease;;
     color: var(--blackText);
+    -webkit-text-fill-color: var(--baseText);
     outline: none;
 }
 
@@ -191,6 +197,11 @@ h1 {
 
 .inputFieldBaseInner:disabled {
     color: var(--baseText);
+}
+
+.hoverUnderln:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--blue);
 }
 
 .bottomLinks {
