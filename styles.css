@@ -122,6 +122,7 @@ h1 {
     padding: .8em 3.2rem .8em .8em;
     font-size: 1.25rem;
     -moz-appearance: textfield;
+    -webkit-appearance: none;
     border: 2px solid var(--divider);
     border-radius: 10px;
     max-width: 260px;
@@ -202,7 +203,7 @@ h1 {
 .bottomLinks ul {
     list-style-type: none;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     column-gap: 3.125rem;
     margin: 0;
     padding: 0;
@@ -219,6 +220,15 @@ h1 {
     top: 70px;
     left: -70px;
     line-height: 1.4;
+    width: 260px;
+}
+
+@media screen and (max-width: 768px) {
+    .infoBaseTooltip {
+        position: fixed;
+        top: 25%;
+        left: 15%;
+    }
 }
 
 .showInfoBaseTooltip {
