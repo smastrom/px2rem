@@ -7,29 +7,45 @@
 </head>
 
 <body>
-    <div class="mainWrapper">
-        <div class="mainContainer">
-
-            <div class="logoContainer">
-                <h1 class="logo">Px2Rem</h1>
-                <p class="subHeading">Just enter the input value, the conversion
-                    will be performed live in both directions.</p>
-            </div>
-
-
-
-            <div class="pxRemContainer">
-                <div class="inputFieldPx"><input class="inputField" type="number" id="pixels" decimals="3"
-                        value="16"></input>
+    <header>
+            <div class="globalContainer">
+                <div class="logoContainer">
+                    <a href="/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="159.337" height="48.602"
+                            viewBox="0 0 159.337 48.602" class="logo">
+                            <title>Px2Rem Logo</title>
+                            <path
+                                d="M-2.243,4.588q-.1-.2-.408-.739t-.357-.663q-.051-.127-.255-.535a3.79,3.79,0,0,1-.229-.51q-.025-.1-.127-.459A1.5,1.5,0,0,1-3.7,1.122a3.3,3.3,0,0,0,0-.586A3.547,3.547,0,0,1-3.67-.2q.051-.357.153-.867a58.648,58.648,0,0,1,2.4-8A3.963,3.963,0,0,1-2.651-10.68a3.835,3.835,0,0,1-.51-1.657v-.714l.1-.1q.153,0,.51.459A3,3,0,0,0-.2-11.572,131.886,131.886,0,0,1,11.674-35.277a53.637,53.637,0,0,0-6.882,3.569L2.7-30.281a1.49,1.49,0,0,1-.153.127,3.143,3.143,0,0,1-.331.2q-.229.127-.331-.025L.918-31.811a1.537,1.537,0,0,1-.178-.408,7.889,7.889,0,0,1-.178-.943A.911.911,0,0,1,.816-34.1q2.8-3.925,9.151-6.449a32.1,32.1,0,0,1,11.8-2.523,6.559,6.559,0,0,1,3.823.969,17.232,17.232,0,0,1,4.894,4.945,9.326,9.326,0,0,1,1.529,5.047,12.129,12.129,0,0,1-1.249,4.97,19.677,19.677,0,0,1-3.135,4.69A40.793,40.793,0,0,1,23.2-18.225a47,47,0,0,1-4.843,3.543q-2.345,1.478-4.639,2.651A33.473,33.473,0,0,1,3.569-8.411Q1.886-4.282.408,0,.1.816,0,1.173A7.8,7.8,0,0,0-.306,2.4,3.1,3.1,0,0,0-.127,3.543a3.571,3.571,0,0,1,.178,1.3q-.051.51-.714.663Q-1.478,5.659-2.243,4.588ZM16.67-33.391q-1.325,2.651-5.353,10.145T5.659-12.592q.153-.051.433-.127a2.4,2.4,0,0,0,.382-.127,32.322,32.322,0,0,0,6.474-3.288,53.782,53.782,0,0,0,6.857-5.251,30.264,30.264,0,0,0,5.812-7.086,19.574,19.574,0,0,0,2.829-8.08,12.437,12.437,0,0,0-6.627-1.478,22.243,22.243,0,0,0-4.231.459q.408.306.306.612A9.413,9.413,0,0,1,16.67-33.391ZM27.783-6.525a3.765,3.765,0,0,0-.408-.663q-.357-.51-.637-.969t-.229-.612q.51-1.784,8.462-9.533-3.263-9.329-2.8-11.062A3.212,3.212,0,0,1,33.7-29.67a4.273,4.273,0,0,1,1.835.382,1.452,1.452,0,0,1,.918,1.147l1.784,6.933q.969-.816,3.8-3.39t4.359-3.772q1.529-1.2,1.937-.943a5.719,5.719,0,0,1,1.682,2.09l.306.459a.382.382,0,0,1,.051.331.583.583,0,0,1-.1.229q-.051.051-.331.306t-.433.408q-.816.816-6.321,5.353l-3.772,3.212q2.549,7.749,3.772,9.635,1.071,1.631-.714,1.223a13.8,13.8,0,0,1-2.09-.714q-.969-.459-3.874-7.6-6.78,6.168-7.443,7.851-.2.612-.51.612a.578.578,0,0,1-.382-.153,1.528,1.528,0,0,1-.28-.306ZM46.747-8.717a4.053,4.053,0,0,1-.688-1.529,2.9,2.9,0,0,1,.586-1.427,17.409,17.409,0,0,1,3.39-3.033q2.727-2.065,5.888-4.486t6.3-5.251a26.751,26.751,0,0,0,5.123-6.168,11.3,11.3,0,0,0,1.835-6.347,4.437,4.437,0,0,0-1.173-.153,11.03,11.03,0,0,0-3.9.918,30.6,30.6,0,0,0-4.231,2.039q-1.912,1.122-3.518,1.988a5.426,5.426,0,0,1-1.963.816q-.816-.1-1.453-2.039a4.053,4.053,0,0,1-.076-3.059,8.693,8.693,0,0,1,2.294-1.427,37.107,37.107,0,0,1,5.327-2.192,17.381,17.381,0,0,1,5.327-1.071,4.878,4.878,0,0,1,2.039.357,12.542,12.542,0,0,1,3.467,3.161q.51.918.765,1.453a5.549,5.549,0,0,1,.28,2.014,7.894,7.894,0,0,1-.637,3.11,26.825,26.825,0,0,1-4.843,7.9q-1.122,1.223-2.778,2.88T59.186-15.8q-3.263,2.8-6.423,5.047l10.145-.969q3.925-.255,4.333,0a8.136,8.136,0,0,1,1.122,1.274q.51.714.306.969a1.519,1.519,0,0,1-1.173.51q-.357.051-6.7.994t-6.551.994a47.8,47.8,0,0,1-5.608.255,1.471,1.471,0,0,1-.714-.28,2.05,2.05,0,0,1-.433-.408A6.582,6.582,0,0,1,47.1-8.08Q46.849-8.564,46.747-8.717Zm29.262,6.78a10.171,10.171,0,0,1-.612-.841q-.357-.535-.969-1.708a4.369,4.369,0,0,1-.612-1.784,39.124,39.124,0,0,1,.535-4.206,27.121,27.121,0,0,1,.994-4.359q.1-.306,1.274-4.231t2.6-8.361a61.73,61.73,0,0,1,2.447-6.627q-4.18,2.243-4.435,3.467-.051.357-.255.357-.459,0-1.2-1.5a5.124,5.124,0,0,1-.688-1.861,2.339,2.339,0,0,1,.459-1.071,15.509,15.509,0,0,1,3.441-2.727,17.8,17.8,0,0,1,5.633-2.371,14.31,14.31,0,0,1,3.161-.357A10.47,10.47,0,0,1,96.4-35.583,6.888,6.888,0,0,1,98.032-31.2a15.285,15.285,0,0,1-3.11,8.921q-3.11,4.384-9.788,7.7,6.321,7.545,8.361,9.125.255.255.714.637a8.09,8.09,0,0,0,1.58.918,2.55,2.55,0,0,0,1.886.28q.663-.2.612.153-.051.663-1.427,1.427A5.255,5.255,0,0,1,94-1.325q-2.294-.051-6.423-3.314a69.647,69.647,0,0,1-8.259-7.8L77.182-5.455A3.817,3.817,0,0,0,77-4.843q-.076.357-.178,1.325a1.794,1.794,0,0,0,.255,1.376q.357.714-.255.561Zm10.451-31.2Q80.954-18.148,80.5-16.415q.816-.612,1.325-.918,1.988-1.478,3.416-2.676t3.314-3.059a27.392,27.392,0,0,0,3.084-3.543,19.48,19.48,0,0,0,2.09-3.823,11.7,11.7,0,0,0,.943-4.231,7.824,7.824,0,0,0-5.149-1.427,15.567,15.567,0,0,0-4.843.816A3.705,3.705,0,0,1,86.1-34.156Q86.868-33.187,86.46-33.136ZM100.836-6.117a3.884,3.884,0,0,1-2.778-1.427,8.456,8.456,0,0,1-1.81-3.11,10.76,10.76,0,0,1-.561-3.314q.051-4.486,3.7-9.482a23.231,23.231,0,0,1,7.468-7.035,10.7,10.7,0,0,1,4.231-1.478,3.815,3.815,0,0,1,2.906,1.427,7.166,7.166,0,0,1,1.529,2.065,4.447,4.447,0,0,1-.153,2.523q-1.274,3.416-5.684,7.01t-7.061,3.594a1.489,1.489,0,0,1-1.529-.816A22.263,22.263,0,0,0,99-9.38a10.537,10.537,0,0,0,5.174-1.223,28.2,28.2,0,0,0,6.041-4.078q3.161-2.7,4.919-4.41t4.206-4.257q.765-.867,1.122-.867a1.4,1.4,0,0,1,.816.51q.663.918.612,1.274a.7.7,0,0,1-.255.459L114.5-14.784Q104.965-5.965,100.836-6.117ZM102.212-18.4a11.666,11.666,0,0,0,6.015-3.7,18.281,18.281,0,0,0,3.67-5.735,10.869,10.869,0,0,0-4.767,2.906,27.825,27.825,0,0,0-4.359,5.557A9,9,0,0,1,102.212-18.4Zm11.113,8.87a4.136,4.136,0,0,1-.178-.867.844.844,0,0,1,.076-.51l.051-.1a55.628,55.628,0,0,1,4.333-10.909q1.071-1.988,1.861-3.212a8.288,8.288,0,0,1,1.1-1.478l.255-.255q.1-.1.28-.306a2.888,2.888,0,0,1,.561-.459q.382-.255.586-.153a16.194,16.194,0,0,1,2.192,2.549,4.6,4.6,0,0,1-.714,1.937q-.1.2-1.529,2.778t-2.753,5.1a22.423,22.423,0,0,0-1.427,2.982,95.744,95.744,0,0,1,8.259-10.043q.51-.459,1.5-1.4t1.733-1.606q.739-.663,1.529-1.325a6.728,6.728,0,0,1,1.325-.918q.535-.255.739-.051.1.1.459.408a6.872,6.872,0,0,1,.612.586q.255.28.535.637a2.7,2.7,0,0,1,.408.688.787.787,0,0,1,.025.586L133.513-21l-3.721,7.545q5.608-6.321,7.851-8.361,5.659-5.3,6.168-4.792.1.1.739.663a7.957,7.957,0,0,1,.841.816q.2.255.535.765a1.517,1.517,0,0,1,.28.994,2.83,2.83,0,0,1-.357,1.045q-6.321,11.572-6.627,12.847,12.49-12.031,13.611-13.254l1.529-1.478a.2.2,0,0,1,.306.1q1.173,1.173.918,1.529-.1.153-1.759,2.014l-3.747,4.206q-2.09,2.345-3.008,3.212-8.972,8.717-9.89,7.9a5.279,5.279,0,0,1-.867-1.1,15.118,15.118,0,0,1-.816-1.4l-.306-.663q-.51-.459.1-2.345a24.96,24.96,0,0,1,1.376-3.161q1.122-2.294,2.141-4.18l.969-1.886-7.494,7.545L130.352-10.4q-2.039,2.039-2.549,1.835a2.673,2.673,0,0,1-.892-.892,7.6,7.6,0,0,1-.841-1.453l-.357-.663a1.978,1.978,0,0,1-.1-.255,5.327,5.327,0,0,1-.127-.739,2.8,2.8,0,0,1,.178-1.3q.2-.714.841-2.32t1.2-2.88l.51-1.274A94.137,94.137,0,0,0,118.78-9.278q-.255.357-.688.969t-.637.892q-.2.28-.484.612a1.985,1.985,0,0,1-.51.459.983.983,0,0,1-.484.127q-.663,0-1.529-1.223A7.522,7.522,0,0,1,113.326-9.533Z"
+                                transform="translate(3.704 43.077)" fill="#161615" />
+                        </svg>
+                    </a>
+                    <p class="subHeading">Just enter the input value, the conversion
+                        will be performed live in both directions.
+                    </p>
                 </div>
-                <div class="inputFieldRem"><input class="inputField" type="number" id="rems" decimals="3"
-                        value="1"></input>
+            </div>
+    </header>
+
+    <main>
+        <div class="globalContainer">
+            <div class="pxRemContainer">
+                <div>
+                    <div class="inputFieldPx"><input class="inputField" type="number" id="pixels" decimals="3"
+                            value="16"></input></div>
+                            <button class="changeBase copyBtn hoverUnderln" id="copy_px">Copy</button>
+                </div>
+
+                <div>
+                    <div class="inputFieldRem"><input class="inputField" type="number" id="rems" decimals="3"
+                            value="1"></input>
+                    </div>
+                    <button class="changeBase copyBtn hoverUnderln" id="copy_rem">Copy</button>
                 </div>
             </div>
 
             <div class="baseContainer">
-                <button class="changeBase infoBaseBtn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        viewBox="0 0 20 20">
+                <button class="changeBase infoBaseBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                         <g transform="translate(-2 -2)">
                             <path d="M11,10.979a1,1,0,1,1,2,0v6a1,1,0,0,1-2,0Z" fill="#8f94a0" />
                             <path d="M12,6.051a1,1,0,1,0,1,1A1,1,0,0,0,12,6.051Z" fill="#8f94a0" />
@@ -37,28 +53,52 @@
                                 fill="#8f94a0" fill-rule="evenodd" />
                         </g>
                     </svg>
-                </button><label for="base-text">Base</label>
-                <div class="infoBaseTooltip">By default, if not set, the browser’s default HTML font-size equals to
-                    16px, however if you are using a framework such as Material UI or a Wordpress Theme it might be
-                    different. If you are unsure just inspect the HTML tag of your website and check for the font-size
-                    property. The px value assigned is your base. If the HTML tag doesn’t include this property check
-                    for the body tag.</div>
-                <div class="inputFieldBase"><input class="inputField inputFieldBaseInner" name="base-text"
-                        class="changeBase" type="number" id="base" value="16" min="1" max="32" decimals="3"
-                        disabled=""></input></div>
-                <button class="changeBase" id="change_base">Edit</button>
+                </button>
+                <label for="base-text">Base</label>
+                <div class="inputFieldBase">
+                    <input class="inputField inputFieldBaseInner" name="base-text" class="changeBase" type="number"
+                        id="base" value="16" min="1" max="32" decimals="3" disabled="">
+                    </input>
+                </div>
+                <button class="changeBase hoverUnderln" id="change_base">
+                    Edit
+                </button>
+                <div class="infoBaseTooltip">
+                    If not set, the browser’s default HTML font-size equals to
+                    16px, however if you are using a framework or a Wordpress Theme it might be
+                    different. If you are unsure just inspect the HTML tag of your website and check for the
+                    font-size property. The px value assigned is your base. If the HTML tag doesn’t include this
+                    property
+                    check for the body tag instead.
+                </div>
             </div>
-
-            <nav class="bottomLinks">
-                <ul>
-                    <li><a class="hoverUnderln" href="https://github.com/alienopolis21/px2rem" target="_blank">Like on GitHub</a></li>
-                    <li><a class="hoverUnderln" href="https://chiamakaikeanyi.dev/sizing-in-css-px-vs-em-vs-rem/" target="_blank">Lean more</a></li>
-                </ul>
-            </nav>
         </div>
-
-    </div>
-
+    </main>
+    <footer class="footer">
+    <nav class="bottomLinks" role="footer-navigation">
+        <ul>
+            <li>
+                <a href="https://github.com/alienopolis21/px2rem" aria-label="Like the project on GitHub" target="_blank" tabindex="0" role="button" >
+                    Like on
+                    GitHub
+                </a>
+            </li>
+            <li>
+                <a href="https://chiamakaikeanyi.dev/sizing-in-css-px-vs-em-vs-rem/" aria-label="Learn more about responsive units"
+                    target="_blank" tabindex="0" role="button">
+                    Lean more
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 128" preserveAspectRatio="none">
+        <g id="layered-waves-haikei_1_" data-name="layered-waves-haikei(1)" transform="translate(0 -413)">
+          <path id="Tracciato_6" data-name="Tracciato 6" d="M0,438l26.7-1.8c26.6-1.9,80-5.5,133.3-8.9,53.3-3.3,106.7-6.3,160-.8S426.7,446,480,446.8c53.3.9,106.7-11.5,160-15.6,53.3-4.2,106.7-.2,160-1.9,53.3-1.6,106.7-9,133.3-12.6L960,413V541H0Z" fill="#d0e2ff"/>
+          <path id="Tracciato_7" data-name="Tracciato 7" d="M0,465l26.7,3.2c26.6,3.1,80,9.5,133.3,14.1,53.3,4.7,106.7,7.7,160,11,53.3,3.4,106.7,7,160,3.5s106.7-14.1,160-21.6,106.7-11.9,160-5.4,106.7,23.9,133.3,32.5L960,511v30H0Z" fill="#005eef"/>
+        </g>
+      </svg>
+      
+    </footer>
 
     <script>
 
@@ -71,14 +111,69 @@
             let remsField = document.querySelector("#rems");
             let changeBaseBtn = document.querySelector("#change_base");
             let infoBaseBtn = document.querySelector(".infoBaseBtn");
-            let infoBaseTooltip = document.querySelector(".infoBaseTooltip")
+            let infoBaseTooltip = document.querySelector(".infoBaseTooltip");
+            let copyPixels = document.querySelector("#copy_px");
+            let copyRems = document.querySelector("#copy_rem");
+
+
+            copyPixels.addEventListener("click", async (e) => {
+
+                if (!navigator.clipboard) {
+                    event.target.style.display = "none"; // Hide button if browser not supported
+                    return // Ends the function if clipboard not available
+                }
+
+                const pixelsText = pixelsField.valueAsNumber
+
+                try {
+                    await navigator.clipboard.writeText(pixelsText)
+                    alert("Copied!")
+                } catch (err) {
+                    alert("Didn't copied it!")
+                }
+
+            })
+
+
+            copyRems.addEventListener("click", async (e) => {
+
+                if (!navigator.clipboard) {
+                    return // Ends the function if clipboard not available
+                }
+
+                const remsText = remsField.valueAsNumber
+
+                try {
+                    await navigator.clipboard.writeText(remsText)
+                    alert("Copied!")
+                } catch (err) {
+                    alert("Didn't copied it!")
+                }
+
+            })
+
 
             // Open and close tooltip
+
+            const overlay = document.createElement("div")
+
+            function addOverlay() {
+                document.body.prepend(overlay)
+                overlay.classList.add("overlay")
+                setTimeout(() => { overlay.classList.add("fadeOverlay") }, 50);
+            }
+
+            function removeOverlay() {
+                setTimeout(() => { overlay.classList.remove("fadeOverlay") }, 50);
+                setTimeout(() => { document.body.removeChild(overlay) }, 1000);
+            }
 
             infoBaseBtn.addEventListener("click", (e) => {
                 if (infoBaseTooltip.classList.contains("skewOutAnim")) {
                     setTimeout(() => { infoBaseTooltip.classList.remove("skewOutAnim") }, 50); // Remove animation-out class if already trigged the closure, ignored in the first execution
                 }
+
+                addOverlay();
 
                 setTimeout(() => {
                     infoBaseTooltip.classList.add("showInfoBaseTooltip") // Sets tooltip on display: flex
@@ -86,6 +181,10 @@
                 }, 50);
 
                 closeTooltip(); // Runs the function with the listener that closes the tooltip
+
+                if (document.body.querySelector("overlay")) {
+                    removeOverlay();
+                }
             })
 
             function closeTooltip() {
@@ -95,10 +194,14 @@
                         infoBaseTooltip.classList.remove("skewInAnim") // Removes animation-in class triggered with the opening
                         setTimeout(() => { infoBaseTooltip.classList.add("skewOutAnim") }, 50); // Runs the animation closing class
                         setTimeout(() => { infoBaseTooltip.classList.remove("showInfoBaseTooltip") }, 550); // Sets on display:none the element after the animation is finish
+                        removeOverlay();
                     }
 
                 })
             };
+
+
+
 
             // Px base text field behavior
 
@@ -228,6 +331,7 @@
 
                     if (!verifyRems) {
                         remsResult = remsResult.toFixed(3)
+                        remsResult = parseFloat(remsResult)
                     }
 
                     // console.log(remsResult)

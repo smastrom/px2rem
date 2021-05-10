@@ -2,14 +2,14 @@
     font-family: "Inter";
     src: url("/woff2/Inter-Regular.woff2");
     font-weight: 400;
-    display: swap;
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Inter";
     src: url("/woff2/Inter-SemiBold.woff2");
     font-weight: 600;
-    display: swap;
+    font-display: swap;
 }
 
 :root {
@@ -42,7 +42,9 @@ body {
     color: var(--baseText);
     position: relative;
     height: 100%;
-    min-height: 660px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1, h2, h3 {
@@ -54,28 +56,37 @@ p {
 }
 
 a {
-    color: var(--baseText);
     text-decoration: none;
+    color: white;
 }
-
 
 h1 {
     font-size: 3.5rem;
 }
 
-.mainWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.logo {
+    width: 300px;
+    height: 70px;
+    margin-bottom: 1rem;
 }
 
-.mainContainer {
+.logo path {
+    fill: var(--blue);
+}
+
+.globalContainer {
     width: var(--globalContainer);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: var(--globalTbPadding) var(--globalLrPadding);
+}
+
+@media screen and (max-width: 1100px) {
+    .globalContainer {
+        width: 100%;
+    }
 }
 
 .logoContainer {
@@ -85,7 +96,7 @@ h1 {
     flex-direction: column;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
     .logoContainer {
         width: 100%;
     }
@@ -96,28 +107,24 @@ h1 {
     text-align: center;
 }
 
-.logo {
-    color: var(--blue);
-    font-family: var(--interStack);
-    font-weight: 600;
-}
-
 .baseContainer {
     display: flex;
     align-items: center;
     position: relative;
+    width: 260px;
+    justify-content: center;
 }
 
 .pxRemContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 3rem;
-    margin: 6.25rem 0;
+    margin: 0 0 4rem 0;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
     .pxRemContainer {
-        margin: 4rem 0;
+        margin: 0 0 4rem 0;
         grid-template-columns: 1fr;
         row-gap: 2rem;
     }
@@ -136,7 +143,6 @@ h1 {
     transition: border .15s ease, box-shadow .15s ease;
     -webkit-transition: border .15s ease, box-shadow .15s ease;;
     color: var(--blackText);
-    -webkit-text-fill-color: var(--baseText);
     outline: none;
 }
 
@@ -182,7 +188,6 @@ h1 {
 .inputFieldPx::after, .inputFieldBase::after {
     content: "Px";
     display: block;
-    z-index: 1;
     right: 1rem;
     position: absolute;
 }
@@ -190,18 +195,23 @@ h1 {
 .inputFieldRem::after {
     content: "Rem";
     display: block;
-    z-index: 1;
     right: 1rem;
     position: absolute;
 }
 
 .inputFieldBaseInner:disabled {
     color: var(--baseText);
+    -webkit-text-fill-color: var(--baseText);
+}
+
+.hoverUnderln {
+    transition: text-decoration .2s ease;
 }
 
 .hoverUnderln:hover {
     text-decoration: underline;
     text-decoration-color: var(--blue);
+    text-decoration-thickness: 2px;
 }
 
 .bottomLinks {
@@ -228,17 +238,24 @@ h1 {
     color: white;
     padding: 1em;
     border-radius: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
     top: 70px;
-    left: -70px;
     line-height: 1.4;
     width: 260px;
+    z-index: 1;
 }
 
 @media screen and (max-width: 768px) {
     .infoBaseTooltip {
         position: fixed;
         top: 25%;
-        left: 15%;
+        font-size: 1rem;
+    }
+
+    .baseContainer,.infoBaseTooltip {
+        width: 300px;
     }
 }
 
@@ -302,4 +319,47 @@ h1 {
         transform: skewY(-5deg) rotate(5deg) translateY(-30px);
         opacity: 0;
     }
+}
+
+.overlay {
+    background: white;
+    opacity: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: opacity 1s ease;
+}
+
+.fadeOverlay {
+    opacity: .7;
+}
+
+.changeBase svg {
+    z-index: 6;
+    position: relative;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer svg {
+    height: 320px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer svg {
+        height: 240px;
+    }
+}
+
+.copyBtn {
+    margin-top: .625rem;
+    margin-left: 1rem;
 }
