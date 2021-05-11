@@ -372,7 +372,11 @@ h1 {
 
 @media screen and (max-width: 768px) {
     .copyBtn {
-        padding: 1rem;
+        padding: .2rem;
+    }
+
+    .changeBase {
+        font-size: 1rem;
     }
 }
 
