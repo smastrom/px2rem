@@ -1,4 +1,5 @@
-<html lang="en_US">
+<!DOCTYPE html>
+<html lang="en">
 
     <head>
         <meta charset="UTF-8">
@@ -86,15 +87,15 @@
             <nav class="bottomLinks">
                 <ul>
                     <li>
-                        <a href="https://github.com/alienopolis21/px2rem" aria-label="Like the project on GitHub"
+                        <a href="https://github.com/alienopolis21/px2rem" rel="noopener" aria-label="Like the project on GitHub"
                             target="_blank">
                             Like on
                             GitHub
                         </a>
                     </li>
                     <li>
-                        <a href="https://chiamakaikeanyi.dev/sizing-in-css-px-vs-em-vs-rem/"
-                            aria-label="Learn more about responsive units" target="_blank">
+                        <a href="https://chiamakaikeanyi.dev/sizing-in-css-px-vs-em-vs-rem/" rel="noopener" aria-label="Learn more about responsive units"
+                            target="_blank">
                             Lean more
                         </a>
                     </li>
@@ -163,9 +164,9 @@
                     try {
                         await navigator.clipboard.writeText(remsText)
                         copyRems.innerHTML = "Copied!";
-                        setTimeout(() => { copyRems.innerHTML = "Copy" }, 1000);
+                        setTimeout(() => { copyRems.innerHTML = "Copy" }, 2000);
                     } catch (err) {
-                        setTimeout(() => { copyRems.innerHTML = "Copy failed" }, 1000);
+                        setTimeout(() => { copyRems.innerHTML = "Copy failed" }, 2000);
                     }
 
                 })
