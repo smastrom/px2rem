@@ -349,7 +349,7 @@ h1 {
     position: absolute;
 }
 
-@media screen and (max-height: 768px) {
+@media screen and (max-width: 768px) {
     .footer {
         position: relative;
     }
@@ -361,7 +361,7 @@ h1 {
 
 @media screen and (max-width: 768px) {
     .footer svg {
-        height: 240px;
+        height: 220px;
     }
 }
 
