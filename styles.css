@@ -102,7 +102,6 @@ h1 {
     }
 }
 
-
 .subHeading {
     text-align: center;
 }
@@ -218,7 +217,7 @@ h1 {
     display: grid;
     align-content: center;
     position: absolute;
-    bottom: 40px;
+    bottom: var(--globalTbPadding);
 }
 
 .bottomLinks ul {
@@ -345,8 +344,14 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     bottom: 0;
+    position: absolute;
+}
+
+@media screen and (max-height: 768px) {
+    .footer {
+        position: relative;
+    }
 }
 
 .footer svg {
@@ -361,5 +366,11 @@ h1 {
 
 .copyBtn {
     margin-top: .625rem;
-    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.inputWCopy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
