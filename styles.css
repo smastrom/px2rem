@@ -274,11 +274,12 @@ footer svg:nth-child(2) {
     background: none;
     border: none;
     cursor: pointer;
-    right: var(--gapSmall);
-    bottom: var(--gapSmall);
+    right: 0;
+    bottom: 0;
     width: var(--gapSmall);
     height: var(--gapSmall);
     box-sizing: content-box;
+    padding: var(--gapSmall);
 }
 
 @media screen and (max-height: 800px) {
