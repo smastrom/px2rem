@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   const infoBaseTooltip = document.querySelector(".infoBaseTooltip");
   const copyPixels = document.querySelector("#copy_px");
   const copyRems = document.querySelector("#copy_rem");
+  const infoPathGroup = document.querySelector(".infoPathGroup");
 
   // Clipboard
   function hideClipboard() {
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         infoBaseTooltip.classList.remove("skewInAnim"); // Removes animation-in class triggered with the opening
         setTimeout(() => {
           infoBaseTooltip.classList.add("skewOutAnim");
+          infoPathGroup.style.fill = "var(--baseText)";
         }, 50); // Runs the animation closing class
         setTimeout(() => {
           infoBaseTooltip.classList.remove("showInfoBaseTooltip");
@@ -73,15 +75,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
     if (infoBaseTooltip.classList.contains("skewOutAnim")) {
       setTimeout(() => {
         infoBaseTooltip.classList.remove("skewOutAnim");
-      }, 50); // Remove animation-out class if already trigged the closure, ignored in the first execution
+      }, 50); // Remove animation-out class if already trigged the closure, ignored during the first execution
     }
 
     setTimeout(() => {
       infoBaseTooltip.classList.add("showInfoBaseTooltip"); // Sets tooltip on display: flex
       infoBaseTooltip.classList.add("skewInAnim"); // Runs the animation
+      infoPathGroup.style.fill = "var(--mainColor)"; // Sets color
     }, 50);
 
     closeTooltip(); // Runs the function with the listener that closes the tooltip
+
+    // A11y
 
     if (infoBaseBtn.getAttribute("aria-expanded") === "false") {
       infoBaseBtn.setAttribute("aria-expanded", "true");

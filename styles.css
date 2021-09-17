@@ -2,7 +2,7 @@
     --mainColor: #e1b23f;
     --baseText: #B3AB94;
     --divider: #6a543c;
-    --background: #393128;
+    --background: #332c24;
     --backgroundAlt: #50463b;
     --globalLrPadding: 30px;
     --globalTbPadding: 40px;
@@ -10,7 +10,6 @@
     --gapRegular: 30px;
     --gapL: 50px;
     --gapXL: 70px;
-
     --defaultStack: -apple-system, BlinkMacSystemFont, "Helvetica", "Helvetica Neue", "Arial", sans-serif;
 }
 
@@ -73,6 +72,10 @@ footer svg:nth-child(2) {
 
 .github svg {
     width: 40px;
+}
+
+.infoPathGroup {
+    transition: fill .15s ease; 
 }
 
 .logo {
@@ -200,14 +203,14 @@ footer svg:nth-child(2) {
 .inputFieldPx::after, .inputFieldBase::after {
     content: "Px";
     display: block;
-    right: 1rem;
+    right: var(--gapSmall);
     position: absolute;
 }
 
 .inputFieldRem::after {
     content: "Rem";
     display: block;
-    right: 1rem;
+    right: var(--gapSmall);
     position: absolute;
 }
 
@@ -257,13 +260,31 @@ footer svg:nth-child(2) {
 
 .copyBtn {
     margin-top: .625rem;
-    margin-right: 1rem;
+    margin-right: var(--gapSmall);
 }
 
 .inputWCopy {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+
+.closeButton {
+    position: absolute;
+    background: none;
+    border: none;
+    cursor: pointer;
+    right: var(--gapSmall);
+    bottom: var(--gapSmall);
+    width: var(--gapSmall);
+    height: var(--gapSmall);
+    box-sizing: content-box;
+}
+
+@media screen and (max-height: 800px) {
+    body {
+        row-gap: var(--gapL);
+    }
 }
 
 @media screen and (max-width: 768px) {
