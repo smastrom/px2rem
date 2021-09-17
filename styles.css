@@ -50,38 +50,7 @@ h1 {
     font-size: 3.5rem;
 }
 
-footer {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100vw;
-    margin: 0 calc(var(--globalLrPadding) * -1);
-    position: relative;
-}
-
-footer svg:nth-child(2) {
-    width: 100%;
-    height: 280px;
-}
-
-.github {
-    position: absolute;
-    z-index: 1;
-    bottom: calc(var(--globalLrPadding) / 2);
-}
-
-.github svg {
-    width: 40px;
-}
-
-.infoPathGroup {
-    transition: fill .15s ease; 
-}
-
-.logo {
-    width: 300px;
-    height: 70px;
-}
+/* Header */
 
 .globalContainer {
     display: grid;
@@ -98,21 +67,16 @@ footer svg:nth-child(2) {
     justify-items: center;
 }
 
+.logo {
+    width: 300px;
+    height: 70px;
+}
+
 .subHeading {
     text-align: center;
 }
 
-.baseContainer {
-    --width: 260px;
-    display: grid;
-    align-items: center;
-    width: 260px;
-    column-gap: var(--gapSmall);
-    grid-template-columns: min-content;
-    justify-content: center;
-    justify-items: center;
-    row-gap: var(--gapSmall);
-}
+/* Input fields */
 
 .pxRemContainer {
     display: grid;
@@ -147,7 +111,7 @@ footer svg:nth-child(2) {
   margin: 0;
 }
 
-.changeBase {
+.genericBtn {
     font-size: .875rem;
     appearance: none;
     border: none;
@@ -155,24 +119,6 @@ footer svg:nth-child(2) {
     text-transform: uppercase;
     color: var(--mainColor);
     cursor: pointer;
-}
-
-.infoBaseBtn {
-    display: grid;
-    grid-template-columns: min-content min-content;
-    align-items: center;
-    column-gap: .325rem;
-    cursor: pointer;
-}
-
-.infoBaseBtn svg {
-    width: 15px;
-}
-
-.tooltipLink {
-    color: var(--baseText);
-    text-decoration: underline;
-    transition: color .15s ease;
 }
 
 .tooltipLink:hover {
@@ -219,6 +165,17 @@ footer svg:nth-child(2) {
     -webkit-text-fill-color: var(--baseText);
 }
 
+.copyBtn {
+    margin-top: .625rem;
+    margin-right: var(--gapSmall);
+}
+
+.inputWCopy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .hoverUnderln {
     transition: text-decoration .2s ease;
 }
@@ -229,11 +186,25 @@ footer svg:nth-child(2) {
     text-decoration-thickness: 2px;
 }
 
+/* Base */
+
 .infoBaseContainer {
     position: relative;
     width: var(--width);
     display: flex;
     justify-content: center;
+}
+
+.baseContainer {
+    --width: 260px;
+    display: grid;
+    align-items: center;
+    width: 260px;
+    column-gap: var(--gapSmall);
+    grid-template-columns: min-content;
+    justify-content: center;
+    justify-items: center;
+    row-gap: var(--gapSmall);
 }
 
 .infoBaseTooltip {
@@ -243,7 +214,7 @@ footer svg:nth-child(2) {
     background: var(--background);
     color: var(--baseText);
     border: 2px solid var(--mainColor);
-    padding: 1em;
+    padding: var(--gapSmall);
     border-radius: 10px;
     left: 0;
     right: 0;
@@ -254,19 +225,25 @@ footer svg:nth-child(2) {
     z-index: 1;
 }
 
+.infoBaseBtn {
+    display: grid;
+    grid-template-columns: min-content min-content;
+    align-items: center;
+    column-gap: .325rem;
+}
+
+.infoBaseBtn svg {
+    width: 15px;
+}
+
+.tooltipLink {
+    color: var(--baseText);
+    text-decoration: underline;
+    transition: color .15s ease;
+}
+
 .showInfoBaseTooltip {
     display: flex;
-}
-
-.copyBtn {
-    margin-top: .625rem;
-    margin-right: var(--gapSmall);
-}
-
-.inputWCopy {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 }
 
 .closeButton {
@@ -281,6 +258,37 @@ footer svg:nth-child(2) {
     box-sizing: content-box;
     padding: var(--gapSmall);
 }
+
+.infoPathGroup {
+    transition: fill .15s ease; 
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100vw;
+    margin: 0 calc(var(--globalLrPadding) * -1);
+    position: relative;
+}
+
+footer svg:nth-child(2) {
+    width: 100%;
+    height: 280px;
+}
+.github {
+    position: absolute;
+    z-index: 1;
+    bottom: calc(var(--globalLrPadding) / 2);
+}
+
+.github svg {
+    width: 40px;
+}
+
+/* Media queries */
 
 @media screen and (max-height: 800px) {
     body {
@@ -308,7 +316,7 @@ footer svg:nth-child(2) {
 
     .infoBaseTooltip {
         position: absolute;
-        top: -275px;
+        top: -265px;
         font-size: 1rem;
     }
 
@@ -324,6 +332,8 @@ footer svg:nth-child(2) {
         height: 220px;
     }
 }
+
+/* Animations */
 
 .skewInAnim {
     animation: skewIn .5s ease;

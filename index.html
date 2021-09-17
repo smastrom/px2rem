@@ -9,10 +9,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Px to Rem Converter - Convert px and rem instantly">
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="/styles.css">
+        <link rel="icon" href="favicon.ico" />
+        <link rel="stylesheet" href="styles.css">
         <script src="script.js"></script>
-        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+        <link rel="sitemap" type="application/xml" href="sitemap.xml" />
         <title>Px to Rem Live Converter - Convert pixels to rem</title>
         <meta
         name="description"
@@ -20,7 +20,7 @@
         />
 
         <!--- Google Analytics --->
-        
+
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-X1JM3JSQNX"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
@@ -32,9 +32,9 @@
 
         <!--- PWA --->
 
-        <link rel="manifest" href="/manifest.webmanifest" />
+        <link rel="manifest" href="manifest.webmanifest" />
         <meta name="theme-color" content="#e1b23f" />
-        <link rel="apple-touch-icon" href="/icon-192.png" />
+        <link rel="apple-touch-icon" href="icon-192.png" />
 
 
         <!--- OpenGraph --->
@@ -48,7 +48,7 @@
             property="og:description"
             content="Px to Rem or Px2Rem is a bidirectional pixels and rem converter tool"
         />
-        <meta property="og:image" content="/og_image.png" />
+        <meta property="og:image" content="og_image.png" />
 
         <!--- Twitter --->
 
@@ -60,7 +60,7 @@
             property="twitter:description"
             content="Px to Rem or Px2Rem is a bidirectional pixels and rem converter tool"
         />
-        <meta property="twitter:image" content="/og_image.png" />
+        <meta property="twitter:image" content="og_image.png" />
 
     </head>
 
@@ -91,7 +91,7 @@
                         <div class="inputFieldPx"><input class="inputField" type="tel" id="pixels" value="16" maxlength="12"
                                 aria-label="Please enter your px value, the correspondent rem value will be displayed in the adjacent field"></input>
                         </div>
-                        <button class="changeBase copyBtn hoverUnderln" id="copy_px"
+                        <button class="genericBtn copyBtn hoverUnderln" id="copy_px"
                             aria-label="Copy pixels value">Copy</button>
                     </div>
 
@@ -99,20 +99,20 @@
                         <div class="inputFieldRem"><input class="inputField" type="tel" id="rems" value="1" maxlength="12"
                                 aria-label="Please enter your rem value, the correspondent px value will be displayed in the adjacent field"></input>
                         </div>
-                        <button class="changeBase copyBtn hoverUnderln" id="copy_rem"
+                        <button class="genericBtn copyBtn hoverUnderln" id="copy_rem"
                             aria-label="Copy rems value">Copy</button>
                     </div>
                 </div>
 
                 <div class="baseContainer">
                     <div class="inputFieldBase">
-                        <input class="inputField inputFieldBaseInner" name="base-text" class="changeBase" type="tel"
+                        <input class="inputField inputFieldBaseInner" name="base-text" class="genericBtn" type="tel"
                             id="base" value="16" maxlength="2"
                             aria-label="Please edit your px base value, px value will be updated live based on your rem input">
                         </input>
                     </div>
                     <div class="infoBaseContainer">
-                        <button class="changeBase infoBaseBtn" aria-details="rem_info"
+                        <button class="genericBtn infoBaseBtn" aria-details="rem_info"
                     aria-label="Show info about base size" aria-expanded="false" aria-haspopup="true">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
                         <g transform="translate(-2 -2)" fill="var(--baseText)" class="infoPathGroup">
