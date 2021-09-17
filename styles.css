@@ -1,27 +1,17 @@
-@font-face {
-    font-family: "Inter";
-    src: url("/woff2/Inter-Regular.woff2");
-    font-weight: 400;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Inter";
-    src: url("/woff2/Inter-SemiBold.woff2");
-    font-weight: 600;
-    font-display: swap;
-}
-
 :root {
-    --blue: #005EEF;
-    --lightBlue: #D0E2FF;
-    --baseText: #5F636C;
-    --blackText: #3D3D3D;
-    --divider: #ECECEC;
-    --globalContainer: 1100px;
+    --mainColor: #e1b23f;
+    --baseText: #B3AB94;
+    --divider: #6a543c;
+    --background: #393128;
+    --backgroundAlt: #50463b;
     --globalLrPadding: 30px;
     --globalTbPadding: 40px;
-    --interStack: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica", "Helvetica Neue", "Arial", sans-serif;
+    --gapSmall: 15px;
+    --gapRegular: 30px;
+    --gapL: 50px;
+    --gapXL: 70px;
+
+    --defaultStack: -apple-system, BlinkMacSystemFont, "Helvetica", "Helvetica Neue", "Arial", sans-serif;
 }
 
 * {
@@ -36,71 +26,73 @@ html {
 }
 
 body {
-    font-family: var(--interStack);
+    font-family: var(--defaultStack);
     font-weight: 400;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     color: var(--baseText);
+    background: var(--background);
     position: relative;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-rows: repeat(2, min-content);
+    padding: var(--globalTbPadding) var(--globalLrPadding) 0 var(--globalLrPadding);
+    width: 100%;
+    height: 100vh;
+    row-gap: calc(var(--gapL) * 2);
 }
 
-h1, h2, h3 {
-    margin: 0 0 .4em 0;
-}
-
-p {
-    margin: 0 0 1.2em 0;
-}
-
-a {
-    text-decoration: none;
-    color: white;
+h1, h2, h3, p {
+    margin: 0;
 }
 
 h1 {
     font-size: 3.5rem;
 }
 
+footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100vw;
+    margin: 0 calc(var(--globalLrPadding) * -1);
+    position: relative;
+}
+
+footer svg:nth-child(2) {
+    width: 100%;
+    height: 280px;
+}
+
+.github {
+    position: absolute;
+    z-index: 1;
+    bottom: calc(var(--globalLrPadding) / 2);
+}
+
+.github svg {
+    width: 40px;
+}
+
 .logo {
     width: 300px;
     height: 70px;
-    margin-bottom: 1rem;
-}
-
-.logo path {
-    fill: var(--blue);
 }
 
 .globalContainer {
-    width: var(--globalContainer);
-    display: flex;
+    display: grid;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: var(--globalTbPadding) var(--globalLrPadding);
-}
-
-@media screen and (max-width: 1100px) {
-    .globalContainer {
-        width: 100%;
-    }
+    justify-items: center;
+    row-gap: var(--gapXL);
 }
 
 .logoContainer {
     width: 400px;
-    display: flex;
     align-items: center;
-    flex-direction: column;
-}
-
-@media screen and (max-width: 768px) {
-    .logoContainer {
-        width: 100%;
-    }
+    display: grid;
+    row-gap: var(--gapSmall);
+    justify-items: center;
 }
 
 .subHeading {
@@ -108,26 +100,21 @@ h1 {
 }
 
 .baseContainer {
-    display: flex;
+    --width: 260px;
+    display: grid;
     align-items: center;
-    position: relative;
     width: 260px;
+    column-gap: var(--gapSmall);
+    grid-template-columns: min-content;
     justify-content: center;
+    justify-items: center;
+    row-gap: var(--gapSmall);
 }
 
 .pxRemContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 3rem;
-    margin: 0 0 4rem 0;
-}
-
-@media screen and (max-width: 768px) {
-    .pxRemContainer {
-        margin: 0 0 4rem 0;
-        grid-template-columns: 1fr;
-        row-gap: 2rem;
-    }
+    column-gap: var(--gapL);
 }
 
 .inputField {
@@ -136,19 +123,19 @@ h1 {
     -webkit-appearance: none;
     -moz-appearance: textfield;
     border: 2px solid var(--divider);
-    border-radius: 10px;
     max-width: 260px;
+    border-radius: 10px;
     position: relative;
     background: transparent;
-    transition: border .15s ease, box-shadow .15s ease;
-    -webkit-transition: border .15s ease, box-shadow .15s ease;;
-    color: var(--blackText);
+    transition: border .15s ease, box-shadow .15s ease, color .15s ease;
+    -webkit-transition: border .15s ease, box-shadow .15s ease, color .15s ease;
+    color: var(--baseText);
     outline: none;
 }
 
 .inputField:focus {
-    border: 2px solid var(--blue);
-    box-shadow: 0 0 0 6px var(--lightBlue);
+    border: 2px solid var(--mainColor);
+    box-shadow: 0 0 0 6px var(--backgroundAlt);
 }
 
 .inputField::-webkit-outer-spin-button,
@@ -163,16 +150,41 @@ h1 {
     border: none;
     background: none;
     text-transform: uppercase;
-    color: var(--blue);
+    color: var(--mainColor);
     cursor: pointer;
 }
 
 .infoBaseBtn {
-    margin-right: .325rem;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    align-items: center;
+    column-gap: .325rem;
+    cursor: pointer;
+}
+
+.infoBaseBtn svg {
+    width: 15px;
+}
+
+.tooltipLink {
+    color: var(--baseText);
+    text-decoration: underline;
+    transition: color .15s ease;
+}
+
+.tooltipLink:hover {
+    color: white;
 }
 
 .inputFieldBase {
-    margin: 0 1rem;
+    width: 100px;
+}
+
+.baseTextLabel {
+    text-transform: capitalize;
+    font-size: 1rem;
+    color: var(--baseText);
+    cursor: pointer;
 }
 
 .inputFieldBase > input {
@@ -210,57 +222,85 @@ h1 {
 
 .hoverUnderln:hover {
     text-decoration: underline;
-    text-decoration-color: var(--blue);
+    text-decoration-color: var(--mainColor);
     text-decoration-thickness: 2px;
 }
 
-.bottomLinks {
-    display: grid;
-    align-content: center;
-    position: absolute;
-    bottom: var(--globalTbPadding);
-}
-
-.bottomLinks ul {
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 3.125rem;
-    margin: 0;
-    padding: 0;
+.infoBaseContainer {
+    position: relative;
+    width: var(--width);
+    display: flex;
+    justify-content: center;
 }
 
 .infoBaseTooltip {
     display: none;
     position: absolute;
     font-size: .825rem;
-    background: var(--baseText);
-    color: white;
+    background: var(--background);
+    color: var(--baseText);
+    border: 2px solid var(--mainColor);
     padding: 1em;
     border-radius: 10px;
     left: 0;
     right: 0;
     margin: auto;
-    top: 70px;
+    top: var(--gapRegular);
     line-height: 1.4;
-    width: 260px;
+    width: var(--width);
     z-index: 1;
-}
-
-@media screen and (max-width: 768px) {
-    .infoBaseTooltip {
-        position: fixed;
-        top: 25%;
-        font-size: 1rem;
-    }
-
-    .baseContainer,.infoBaseTooltip {
-        width: 300px;
-    }
 }
 
 .showInfoBaseTooltip {
     display: flex;
+}
+
+.copyBtn {
+    margin-top: .625rem;
+    margin-right: 1rem;
+}
+
+.inputWCopy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        row-gap: var(--gapL);
+    }
+
+    .globalContainer {
+        row-gap: var(--gapL);
+    }
+
+    .logoContainer {
+        width: 100%;
+    }
+
+    .pxRemContainer {
+        grid-template-columns: 1fr;
+        row-gap: var(--gapRegular);
+    }
+
+    .infoBaseTooltip {
+        position: absolute;
+        top: -275px;
+        font-size: 1rem;
+    }
+
+    .copyBtn {
+        padding: .2rem;
+    }
+
+    .changeBase {
+        font-size: 1rem;
+    }
+
+    footer svg:nth-child(2) {
+        height: 220px;
+    }
 }
 
 .skewInAnim {
@@ -319,69 +359,4 @@ h1 {
         transform: skewY(-5deg) rotate(5deg) translateY(-30px);
         opacity: 0;
     }
-}
-
-.overlay {
-    background: white;
-    opacity: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transition: opacity 1s ease;
-}
-
-.fadeOverlay {
-    opacity: .7;
-}
-
-.changeBase svg {
-    z-index: 6;
-    position: relative;
-}
-
-.footer {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    bottom: 0;
-    position: absolute;
-}
-
-@media screen and (max-width: 768px) {
-    .footer {
-        position: relative;
-    }
-}
-
-.footer svg {
-    height: 320px;
-}
-
-@media screen and (max-width: 768px) {
-    .footer svg {
-        height: 220px;
-    }
-}
-
-.copyBtn {
-    margin-top: .625rem;
-    margin-right: 1rem;
-}
-
-@media screen and (max-width: 768px) {
-    .copyBtn {
-        padding: .2rem;
-    }
-
-    .changeBase {
-        font-size: 1rem;
-    }
-}
-
-.inputWCopy {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 }
