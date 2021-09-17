@@ -297,6 +297,7 @@ footer svg:nth-child(2) {
 }
 
 @media screen and (max-width: 768px) {
+
     body {
         row-gap: var(--gapL);
     }
@@ -307,6 +308,11 @@ footer svg:nth-child(2) {
 
     .logoContainer {
         width: 100%;
+    }
+
+    .logo {
+        width: 170px;
+        height: 50px;
     }
 
     .pxRemContainer {
